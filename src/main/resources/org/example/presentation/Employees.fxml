@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.presentation.EmployeesController">
+   <children>
+      <Text layoutX="176.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employees database">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <TableView fx:id="employeesTableView"  layoutX="233.0" layoutY="88.0" prefHeight="298.0" prefWidth="640.0">
+            <TableColumn text="Employee Number">
+               <cellValueFactory>
+                  <PropertyValueFactory property="employeeNumber" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="First Name">
+               <cellValueFactory>
+                  <PropertyValueFactory property="firstName" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Last Name">
+               <cellValueFactory>
+                  <PropertyValueFactory property="lastName" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="email">
+               <cellValueFactory>
+                  <PropertyValueFactory property="email" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="jobTitle">
+               <cellValueFactory>
+                  <PropertyValueFactory property="jobTitle" />
+               </cellValueFactory>
+         </TableColumn>
+      </TableView>
+      <VBox alignment="CENTER" layoutX="51.0" layoutY="88.0" prefHeight="199.0" prefWidth="149.0" spacing="15.0">
+         <children>
+            <TextField fx:id="firstName" promptText="FirstName" />
+            <TextField fx:id="lastName" promptText="lastName" />
+            <TextField fx:id="extension" promptText="Phone Number" />
+            <TextField fx:id="email" promptText="email" />
+            <MenuButton fx:id="officeCode" text="office" minWidth="149" />
+            <MenuButton fx:id="reportsTo" text="Reports To" minWidth="149" />
+            <TextField fx:id="jobTitle" promptText="Job Title" />
+            <Button mnemonicParsing="false" onAction="#addEmployee" text="Add Employee" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
